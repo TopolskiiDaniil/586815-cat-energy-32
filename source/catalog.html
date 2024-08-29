@@ -15,25 +15,33 @@
 
 <body class="page__body">
   <header class="main-header">
-    <a class="main-header__logo" href="#">
-      <img width="33" height="38" src="/" alt="Cat Energy">
-    </a>
-    <a class="main-header__logo-text" href="#">
-      <span class="visually-hidden">Cat Energy</span>
-    </a>
-    <nav class="navigation">
-      <button class="navigation__toggle" type="button">
-        <span class="visually-hidden">Открыть меню</span>
-      </button>
-      <div class="navigation__wrapper">
+    <div class="main-header__wrapper">
+      <!-- Уточнить по поводу хрефа -->
+      <a class="main-header__logo" href="#">
+        <picture>
+          <source media="(min-width: 1440px)" srcset="images/logo-desktop.svg" width="202" height="59" type="image/svg+xml">
+          <source media="(min-width: 768px)" srcset="images/logo-tablet.svg" width="174" height="50" type="image/svg+xml">
+          <img src="images/logo-mobile-image.svg" width="33" height="38" alt="Логотип Cat Energy.">
+        </picture>
+      </a>
+      <a class="main-header__logo-text" href="#">
+        <img src="images/logo-text.svg" width="101" height="18" alt="Название Cat Energy.">
+      </a>
+      <div class="main-header__toggle menu-toggle">
+        <label class="visually-hidden" for="menu-toggle">Открыть/закрыть меню</label>
+        <input class="menu-toggle__toggle-checkbox" type="checkbox" id="menu-toggle" name="menu">
+        <span class="menu-toggle__toggle-bar menu-toggle__toggle-bar--top"></span>
+        <span class="menu-toggle__toggle-bar menu-toggle__toggle-bar--middle"></span>
+        <span class="menu-toggle__toggle-bar menu-toggle__toggle-bar--bottom"></span>
+      </div>
+      <nav class="main-header__navigation navigation">
         <ul class="navigation__list">
-          <li class="navigation__item">
+          <li class="navigation__item navigation__item--current">
             <a class="navigation__link" href="./index.html">
               Главная
             </a>
           </li>
-          <li class="navigation__item navigation__item--current">
-            <!-- уточнить по поводу хрефа -->
+          <li class="navigation__item">
             <a class="navigation__link" href="#">
               Каталог продукции
             </a>
@@ -44,8 +52,8 @@
             </a>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
   <main class="main-container">
     <h1 class="visually-hidden">Каталог Cat Energy</h1>
@@ -357,8 +365,8 @@
   </main>
   <footer class="main-footer">
     <div class="main-footer__wrapper">
-      <a class="main-footer__logo-text" href="#">
-        <span class="visually-hidden">Cat Energy</span>
+      <a class="main-footer__logo" href="#">
+        <img src="images/logo-footer.svg" width="128" height="24" alt="Название Cat Energy.">
       </a>
       <ul class="social-list">
         <li class="social-list__item">
