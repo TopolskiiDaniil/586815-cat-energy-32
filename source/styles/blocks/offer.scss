@@ -3,14 +3,25 @@
   min-height: 480px;
   padding-bottom: 10px;
   text-align: center;
-
-  @media (min-width: $tablet) {
-    min-height: 850px;
-  }
+  display: grid;
 
   @media (min-width: $desktop) {
+    display: block;
     padding: 55px 190px;
     min-height: 584px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 694px;
+      top: -110px;
+      left: 50%;
+      z-index: -2;
+      background: url("../../images/index-background-desktop@2x.jpg"), $main-color;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
     &::after {
       content: "";
@@ -19,22 +30,56 @@
       height: 694px;
       top: -110px;
       left: 50%;
-      z-index: -1;
       background-color: $main-color;
+      opacity: 0.85;
+      z-index: -1;
     }
   }
 }
 
 .offer__wrapper {
-  background-color: $main-color;
+  position: relative;
   color: $white;
   min-height: 302px;
   padding: 27px 35px 164px;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../images/index-background-mobile@2x.jpg"), $main-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -2;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $main-color;
+    opacity: 0.85;
+    z-index: -1;
+  }
 
   @media (min-width: $tablet) {
     background: none;
     padding: 40px 120px 50px;
     min-height: 200px;
+    text-align: left;
+
+    &::before,
+    &::after {
+      background: none;
+    }
   }
 
   @media (min-width: $desktop) {
@@ -46,16 +91,17 @@
 }
 
 .offer__title {
-  margin: 0;
+  margin: 0 auto 25px;
   font-weight: 400;
   font-size: 36px;
   line-height: 36px;
-  margin-bottom: 25px;
+  width: 250px;
+  text-align: center;
 
   @media (min-width: $tablet) {
     font-size: 60px;
     line-height: 60px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px 0;
     color: $black;
     width: 414px;
     text-align: left;
@@ -63,17 +109,19 @@
 }
 
 .offer__description {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
+  width: 200px;
 
   @media (min-width: $tablet) {
     font-size: 20px;
     line-height: 20px;
     color: $black;
-    text-align: left;
+    width: 283px;
+    margin: 0 auto 0 0;
   }
 
   @media (min-width: $desktop) {
@@ -82,27 +130,27 @@
 }
 
 .offer__image {
-  position: absolute;
-  top: 34%;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin-top: -135px;
 
   @media (min-width: $tablet) {
     z-index: -1;
-    top: 28%;
+    margin-top: -11%;
   }
 
   @media (min-width: $desktop) {
-    left: 833px;
-    top: -26px;
     z-index: 0;
+    margin-top: -307px;
+    margin-left: 225px;
   }
 }
 
 .offer__button {
   display: block;
-  margin: 138px 20px 0;
+  margin: 0 auto;
   padding: 10px 63px;
+  order: 3;
+  width: 280px;
 
   @media (min-width: $tablet) {
     margin: 0;
@@ -111,7 +159,7 @@
     width: 244px;
     font-size: 20px;
     line-height: 26px;
-    text-align: left;
+    order: 0;
   }
 
   @media (min-width: $desktop) {
