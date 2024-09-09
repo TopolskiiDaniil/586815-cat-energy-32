@@ -11,19 +11,22 @@
 }
 
 .catalogs__list {
+  width: 280px;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   flex-flow: column wrap;
   gap: 20px;
   flex-wrap: wrap;
 
   @media (min-width: $tablet) {
+    width: 708px;
     gap: 30px;
   }
 
   @media (min-width: $desktop) {
+    width: 1220px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;

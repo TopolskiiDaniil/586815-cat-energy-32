@@ -6,7 +6,7 @@
   }
 
   @media (min-width: $desktop) {
-    padding: 40px 106px 69px 110px;
+    padding: 40px 106px 39px 110px;
   }
 }
 
@@ -23,20 +23,19 @@
 
 .advantages__list {
   @include list-reset;
+  width: 280px;
+  margin: 0 auto;
   display: grid;
   gap: 20px;
 
   @media (min-width: $tablet) {
-    display: flex;
-    gap: 37px 100px;
-    flex-wrap: wrap;
+    width: 708px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 
   @media (min-width: $desktop) {
-    display: flex;
-    flex-flow: wrap;
-    width: 230px;
-    gap: 0 0;
+    width: 1220px;
+    gap: 100px;
   }
 }
 
@@ -52,9 +51,9 @@
 
   @media (min-width: $tablet) {
     min-height: 280px;
-    width: 230px;
+    min-width: 230px;
+    max-width: 250px;
     padding: 151px 0 57px;
-    margin-right: 70px;
   }
 
   &::before {
