@@ -1,1 +1,0 @@
-var n=document.getElementById("menu-toggle"),e=document.querySelector(".navigation");e.classList.remove("navigation--no-js");n.addEventListener("change",()=>{n.checked?e.classList.add("navigation--show"):e.classList.remove("navigation--show")});
